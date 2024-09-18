@@ -2,7 +2,8 @@ package main
 
 import (
 	"fitroom-autotests/config"
-	data "fitroom-autotests/data/fun"
+	data_fun "fitroom-autotests/data/fun"
+	data_ru "fitroom-autotests/data/ru"
 	"fitroom-autotests/initializers"
 	"fitroom-autotests/models"
 	"fitroom-autotests/utils"
@@ -20,6 +21,7 @@ var (
 	appFun          = flag.Bool("appfun", false, "Regress app.Stage.fun")
 	admFun          = flag.Bool("admfun", false, "Regress adm.stage.fun")
 	failed          = flag.Bool("failed", false, "Resend failed requests")
+	production      = flag.Bool("production", false, "Regress production")
 	// special         = flag.Bool("special", false, "Special requests")
 )
 
@@ -44,20 +46,28 @@ func main() {
 		models.SaveFailedRequests()
 	case *landFun:
 		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("Landing"))
-		regressAsync(data.LandFunRequestList)
+		regressAsync(data_fun.LandFunRequestList)
 	case *appFun:
 		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("AppFun"))
-		regressAsync(data.AppFunRequestList)
+		regressAsync(data_fun.AppFunRequestList)
 	case *admFun:
 		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("AdmFun"))
-		regressAsync(data.AdmFunRequestList)
+		regressAsync(data_fun.AdmFunRequestList)
+	case *production:
+		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("production"))
+		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("Landing"))
+		regressAsync(data_ru.LandFunRequestList)
+		// fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("AppFun"))
+		// regressAsync(data_ru.AppFunRequestList)
+		// fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("AdmFun"))
+		// regressAsync(data_ru.AdmFunRequestList)
 	default:
 		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("Landing"))
-		regressAsync(data.LandFunRequestList)
+		regressAsync(data_fun.LandFunRequestList)
 		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("AppFun"))
-		regressAsync(data.AppFunRequestList)
+		regressAsync(data_fun.AppFunRequestList)
 		fmt.Printf("\033[103m%s\033[0m\n", strings.ToUpper("AdmFun"))
-		regressAsync(data.AdmFunRequestList)
+		regressAsync(data_fun.AdmFunRequestList)
 	}
 	models.SaveFailedRequests()
 	fmt.Println(time.Since(start))

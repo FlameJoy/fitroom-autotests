@@ -1,4 +1,4 @@
-package data_fun
+package data_ru
 
 import (
 	"fitroom-autotests/config"
@@ -21,63 +21,63 @@ var (
 		&GetHistory,
 		&GetMarketHTML,
 		&Rent,
-		&Train,
-		&GroupTrain,
+		// &Train,
+		// &GroupTrain,
 	}
 
 	// Requests
 	GetAppointments = models.Request{
-		URL:     config.BACK_FUN + "/api/lk/v2/appointment/available",
+		URL:     config.BACK_RU + "/api/lk/v2/appointment/available",
 		Method:  "POST",
-		Token:   &config.TokenUserFun,
+		Token:   &config.TokenUserRu,
 		ReqBody: utils.PrepareReqBody(available_1),
 	}
 
 	available_1 = models.Available{
-		Workplace:           13, // Пушкин
+		Workplace:           27, // Матисов
 		ServiceProductTypes: []int{1},
 		StartDate:           config.C_Date,
 		EndDate:             config.F_Date,
 	}
 
 	GetAppointmentsGroup = models.Request{
-		URL:     config.BACK_FUN + "/api/lk/v2/appointment/available",
+		URL:     config.BACK_RU + "/api/lk/v2/appointment/available",
 		Method:  "POST",
-		Token:   &config.TokenUserFun,
+		Token:   &config.TokenUserRu,
 		ReqBody: utils.PrepareReqBody(available_2),
 	}
 
 	available_2 = models.Available{
-		Workplace:           13,
-		ServiceProductTypes: []int{10, 11, 8},
+		Workplace:           27,
+		ServiceProductTypes: []int{1, 2},
 		StartDate:           config.C_Date,
 		EndDate:             config.F_Date,
 	}
 
 	GetAvatar = models.Request{
-		URL:    config.BACK_FUN + "/public/image/get-by-id/2076",
+		URL:    config.BACK_RU + "/public/image/get-by-id/2076",
 		Method: "GET",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 
 	GetClubByID = models.Request{
-		URL:    config.BACK_FUN + "/public/club/get-by-id/13", // Pushkin
+		URL:    config.BACK_RU + "/public/club/get-by-id/21", // Матисов
 		Method: "GET",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 
 	GetClubList = models.Request{
-		URL:     config.BACK_FUN + "/public/club/get-list",
+		URL:     config.BACK_RU + "/public/club/get-list",
 		Method:  "POST",
-		Token:   &config.TokenUserFun,
+		Token:   &config.TokenUserRu,
 		ReqBody: utils.PrepareReqBody(cities),
 	}
 
 	GetHistory = models.Request{
-		URL:     config.BACK_FUN + "/api/lk/appointment/history",
+		URL:     config.BACK_RU + "/api/lk/appointment/history",
 		Method:  "POST",
 		ReqBody: utils.PrepareReqBody(pages),
-		Token:   &config.TokenUserFun,
+		Token:   &config.TokenUserRu,
 	}
 
 	pageLimit = models.Paging{
@@ -92,76 +92,76 @@ var (
 	GetMarketHTML = models.Request{
 		URL:    "https://app.fitroom.fun/market",
 		Method: "GET",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 
 	GetPackageList = models.Request{
-		URL:     config.BACK_FUN + "/api/lk/package/get-list",
+		URL:     config.BACK_RU + "/api/lk/package/get-list",
 		Method:  "POST",
 		ReqBody: utils.PrepareReqBody(club_1),
-		Token:   &config.TokenUserFun,
+		Token:   &config.TokenUserRu,
 	}
 
 	club_1 = models.Club{
-		Club: 13, // Пушкин
+		Club: 21, // Матисов
 	}
 
 	GetProfile = models.Request{
-		URL:    config.BACK_FUN + "/api/lk/user/profile",
+		URL:    config.BACK_RU + "/api/lk/user/profile",
 		Method: "GET",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 
 	GetList = models.Request{
-		URL:    config.BACK_FUN + "/api/lk/setting/get-list",
+		URL:    config.BACK_RU + "/api/lk/setting/get-list",
 		Method: "GET",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 
 	GetSettingsList = models.Request{
-		URL:    config.BACK_FUN + "/api/lk/setting/get-list",
+		URL:    config.BACK_RU + "/api/lk/setting/get-list",
 		Method: "GET",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 
 	GetTerm = models.Request{
-		URL:    config.BACK_FUN + "/public/term/get",
+		URL:    config.BACK_RU + "/public/term/get",
 		Method: "GET",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 
 	Rent = models.Request{
-		URL:      config.BACK_FUN + "/api/lk/appointment/book",
+		URL:      config.BACK_RU + "/api/lk/appointment/book",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(bookRent),
 		RespData: &rentResp,
-		Token:    &config.TokenUserFun,
+		Token:    &config.TokenUserRu,
 		Actions:  []func(){Rent_F1},
 		Next:     &CancelRentLk,
 	}
 
 	bookRent = models.Book{
-		User:               2953,
-		Club:               13,
-		Workplace:          13,
+		User:               6775,
+		Club:               21,
+		Workplace:          27,
 		ServiceProductType: 1,
 		StartDate:          config.StartDate1,
 		EndDate:            config.EndDate1,
-		UserPackage:        7959,
+		UserPackage:        33965,
 	}
 
 	rentResp models.Resp
 
 	Rent_F1 = func() {
-		CancelRentLk.URL = config.BACK_FUN + "/api/lk/appointment/cancel/" + strconv.Itoa(rentResp.ID)
+		CancelRentLk.URL = config.BACK_RU + "/api/lk/appointment/cancel/" + strconv.Itoa(rentResp.ID)
 	}
 
 	Train = models.Request{
-		URL:      config.BACK_FUN + "/api/lk/appointment/book",
+		URL:      config.BACK_RU + "/api/lk/appointment/book",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(bookTrain),
 		RespData: &rentResp,
-		Token:    &config.TokenUserFun,
+		Token:    &config.TokenUserRu,
 		Actions:  []func(){Rent_F1},
 		Next:     &CancelRentLk,
 	}
@@ -177,9 +177,9 @@ var (
 	}
 
 	GroupTrain = models.Request{
-		URL:      config.BACK_FUN + "/api/lk/appointment/book",
+		URL:      config.BACK_RU + "/api/lk/appointment/book",
 		Method:   "POST",
-		Token:    &config.TokenUserFun,
+		Token:    &config.TokenUserRu,
 		ReqBody:  utils.PrepareReqBody(groupTrain),
 		RespData: &rentResp,
 		Actions:  []func(){Rent_F1},
@@ -199,6 +199,6 @@ var (
 
 	CancelRentLk = models.Request{
 		Method: "POST",
-		Token:  &config.TokenUserFun,
+		Token:  &config.TokenUserRu,
 	}
 )

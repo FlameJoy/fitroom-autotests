@@ -1,4 +1,4 @@
-package data_fun
+package data_ru
 
 import (
 	"fitroom-autotests/config"
@@ -40,24 +40,24 @@ var (
 		// Book ---------------------------------------------------------
 		&AdminBook,
 		// Create / Edit / Delete elements ------------------------------
-		&CreateBranch,
-		&CreateClub,
-		&CreatePackage,
-		&CreatePromotion,
-		&CreateTag,
-		&CreateWorkplace,
-		&CreateTerm,
-		&ASD,
-		&CreateUser,
-		&CreateGroupTrain,
+		// &CreateBranch,
+		// &CreateClub,
+		// &CreatePackage,
+		// &CreatePromotion,
+		// &CreateTag,
+		// &CreateWorkplace,
+		// &CreateTerm,
+		// &ASD,
+		// &CreateUser,
+		// &CreateGroupTrain,
 		// // Bonus --------------------------------------------------------
-		&BonusRefferal,
-		&BonusAdd,
-		&BonusRemove,
-		&BonusDayBeforeDel,
-		&BonusMaxProcent,
-		&BonusMinProcent,
-		&BonusDelProcent,
+		// &BonusRefferal,
+		// &BonusAdd,
+		// &BonusRemove,
+		// &BonusDayBeforeDel,
+		// &BonusMaxProcent,
+		// &BonusMinProcent,
+		// &BonusDelProcent,
 		// // Reports ------------------------------------------------------
 		&ReportFinancial,
 		&ReportClub,
@@ -71,64 +71,64 @@ var (
 	// Requests
 
 	GetPermission = models.Request{
-		URL:    config.ADM_FUN + "/permission/get",
+		URL:    config.ADM_RU + "/permission/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetProductType = models.Request{
-		URL:    config.ADM_FUN + "/service-product-type/get",
+		URL:    config.ADM_RU + "/service-product-type/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetPromotionList = models.Request{
-		URL:    config.ADM_FUN + "/promotion/get",
+		URL:    config.ADM_RU + "/promotion/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetPromotionType = models.Request{
-		URL:    config.ADM_FUN + "/promotion-type/get",
+		URL:    config.ADM_RU + "/promotion-type/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetMenu = models.Request{
-		URL:    config.ADM_FUN + "/menu/get",
+		URL:    config.ADM_RU + "/menu/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetDistrictList = models.Request{
-		URL:    config.ADM_FUN + "/district/get",
+		URL:    config.ADM_RU + "/district/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetComplexList = models.Request{
-		URL:    config.ADM_FUN + "/complex/get",
+		URL:    config.ADM_RU + "/complex/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetMetroList = models.Request{
-		URL:    config.ADM_FUN + "/metro/get",
+		URL:    config.ADM_RU + "/metro/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetBranchList = models.Request{
-		URL:    config.ADM_FUN + "/branch/get",
+		URL:    config.ADM_RU + "/branch/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetAppointmentsList = models.Request{
-		URL:     config.ADM_FUN + "/appointment/get-list",
+		URL:     config.ADM_RU + "/appointment/get-list",
 		Method:  "POST",
 		ReqBody: utils.PrepareReqBody(appointmentList),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 	}
 
 	appointmentList = models.Appointments{
@@ -138,100 +138,100 @@ var (
 	}
 
 	GetCountryList = models.Request{
-		URL:    config.ADM_FUN + "/country/get",
+		URL:    config.ADM_RU + "/country/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetNotifications = models.Request{
-		URL:    config.ADM_FUN + "/notification/get-list",
+		URL:    config.ADM_RU + "/notification/get-list",
 		Method: "POST",
 
-		Token: &config.TokenAdmFun,
+		Token: &config.TokenAdmRu,
 	}
 
 	GetOrdersList = models.Request{
-		URL:     config.ADM_FUN + "/order/get-list",
+		URL:     config.ADM_RU + "/order/get-list",
 		Method:  "POST",
 		ReqBody: utils.PrepareReqBody(pageLimit),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 	}
 
 	GetOrders = models.Request{
-		URL:     config.ADM_FUN + "/order/get-list",
+		URL:     config.ADM_RU + "/order/get-list",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(&pageLimit),
 	}
 
 	GetGroupAppintments = models.Request{
-		URL:     config.ADM_FUN + "/appointment/available",
+		URL:     config.ADM_RU + "/appointment/available",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(groupAppointmentList),
 	}
 
 	GetNotification = models.Request{
-		URL:    config.ADM_FUN + "/notification/get-list",
+		URL:    config.ADM_RU + "/notification/get-list",
 		Method: "POST",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	groupAppointmentList = models.GroupAppointments{
 		StartDate:           config.P_Date,
 		EndDate:             config.C_Date,
-		Workplace:           120,
-		ServiceProductTypes: []int{10, 8, 11},
+		Workplace:           27,
+		ServiceProductTypes: []int{1, 2},
 	}
 
 	GetReview = models.Request{
-		URL:     config.ADM_FUN + "/review/get-list",
+		URL:     config.ADM_RU + "/review/get-list",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(pages),
 	}
 
 	GetconfigList = models.Request{
-		URL:    config.ADM_FUN + "/setting/get-list",
+		URL:    config.ADM_RU + "/setting/get-list",
 		Method: "POST",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetTagsList = models.Request{
-		URL:    config.ADM_FUN + "/tag/get-list",
+		URL:    config.ADM_RU + "/tag/get-list",
 		Method: "POST",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetTerms = models.Request{
-		URL:    config.ADM_FUN + "/term/get",
+		URL:    config.ADM_RU + "/term/get",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetUserByID = models.Request{
-		URL:    config.ADM_FUN + "/user/get-by-id/2058",
+		URL:    config.ADM_RU + "/user/get-by-id/2058",
 		Method: "GET",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	GetUsersList = models.Request{
-		URL:     config.ADM_FUN + "/user/get-list",
+		URL:     config.ADM_RU + "/user/get-list",
 		Method:  "POST",
 		ReqBody: utils.PrepareReqBody(pageLimit),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 	}
 
 	GetWorkplaceList = models.Request{
-		URL:    config.ADM_FUN + "/workplace/get-list",
+		URL:    config.ADM_RU + "/workplace/get-list",
 		Method: "POST",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	ReportBonus = models.Request{
-		URL:     config.ADM_FUN + "/report/bonus-flow",
+		URL:     config.ADM_RU + "/report/bonus-flow",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(newRepBonus),
 	}
 
@@ -241,9 +241,9 @@ var (
 	}
 
 	ReportClub = models.Request{
-		URL:     config.ADM_FUN + "/report/club",
+		URL:     config.ADM_RU + "/report/club",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(newRepClub),
 	}
 
@@ -275,21 +275,21 @@ var (
 	}
 
 	ReportConversion = models.Request{
-		URL:     config.ADM_FUN + "/report/conversion",
+		URL:     config.ADM_RU + "/report/conversion",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(newRepConversion),
 	}
 
 	newRepConversion = models.RepConversion{
-		FromDate: "2023-01-01",
+		FromDate: config.P_Date,
 		ToDate:   config.C_Date,
 	}
 
 	ReportFinancial = models.Request{
-		URL:     config.ADM_FUN + "/report/revenue",
+		URL:     config.ADM_RU + "/report/revenue",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(newRepFinancial),
 	}
 
@@ -300,9 +300,9 @@ var (
 	}
 
 	ReportTrainers = models.Request{
-		URL:     config.ADM_FUN + "/report/club-trainers",
+		URL:     config.ADM_RU + "/report/club-trainers",
 		Method:  "POST",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(newRepTrainers),
 	}
 
@@ -313,43 +313,43 @@ var (
 	}
 
 	AdminBook = models.Request{
-		URL:      config.ADM_FUN + "/appointment/add",
+		URL:      config.ADM_RU + "/appointment/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(adminBook),
 		RespData: &adminBookResp,
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		Actions:  []func(){AdminBook_F1},
 		Next:     &CancelRentAdm,
 	}
 
 	adminBook = models.Book{
-		Clients:            []uint{2953},
-		Club:               13,
-		Workplace:          13,
+		Clients:            []uint{6775},
+		Club:               21,
+		Workplace:          27,
 		ServiceProductType: 1,
 		StartDate:          config.StartDate1,
 		EndDate:            config.EndDate1,
 		Status:             "booked",
-		User:               2953,
-		UserPackage:        7959,
+		User:               6775,
+		UserPackage:        33965,
 	}
 
 	adminBookResp models.Resp
 
 	AdminBook_F1 = func() {
-		CancelRentAdm.URL = config.ADM_FUN + "/appointment/delete/" + strconv.Itoa(adminBookResp.ID)
+		CancelRentAdm.URL = config.ADM_RU + "/appointment/delete/" + strconv.Itoa(adminBookResp.ID)
 	}
 
 	CancelRentAdm = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	CreateBranch = models.Request{
-		URL:      config.ADM_FUN + "/branch/add",
+		URL:      config.ADM_RU + "/branch/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(newBranch),
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		RespData: &branchResp,
 		Actions:  []func(){Branch_F1},
 		Next:     &EditBranch,
@@ -357,14 +357,14 @@ var (
 
 	EditBranch = models.Request{
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(editBranch),
 		Next:    &DeleteBranch,
 	}
 
 	DeleteBranch = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newBranch = models.BranchReq{
@@ -382,15 +382,15 @@ var (
 	branchResp models.BranchResp
 
 	Branch_F1 = func() {
-		EditBranch.URL = config.ADM_FUN + "/branch/edit/" + strconv.Itoa(branchResp.ID)
-		DeleteBranch.URL = config.ADM_FUN + "/branch/delete/" + strconv.Itoa(branchResp.ID)
+		EditBranch.URL = config.ADM_RU + "/branch/edit/" + strconv.Itoa(branchResp.ID)
+		DeleteBranch.URL = config.ADM_RU + "/branch/delete/" + strconv.Itoa(branchResp.ID)
 	}
 
 	CreateClub = models.Request{
-		URL:      config.ADM_FUN + "/club/add",
+		URL:      config.ADM_RU + "/club/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(newClub),
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		RespData: &clubResp,
 		Actions:  []func(){Club_F1},
 		Next:     &EditClub,
@@ -399,13 +399,13 @@ var (
 	EditClub = models.Request{
 		Method:  "PUT",
 		ReqBody: utils.PrepareReqBody(editClub),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		Next:    &DeleteClub,
 	}
 
 	DeleteClub = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newClub = models.ClubReq{
@@ -437,15 +437,15 @@ var (
 	clubResp models.ClubResp
 
 	Club_F1 = func() {
-		EditClub.URL = config.ADM_FUN + "/club/edit/" + strconv.Itoa(clubResp.ID)
-		DeleteClub.URL = config.ADM_FUN + "/club/delete/" + strconv.Itoa(clubResp.ID)
+		EditClub.URL = config.ADM_RU + "/club/edit/" + strconv.Itoa(clubResp.ID)
+		DeleteClub.URL = config.ADM_RU + "/club/delete/" + strconv.Itoa(clubResp.ID)
 	}
 
 	CreatePackage = models.Request{
-		URL:      config.ADM_FUN + "/package/add",
+		URL:      config.ADM_RU + "/package/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(newPackage),
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		RespData: &packageResp,
 		Actions:  []func(){Package_F1},
 		Next:     &EditPackage,
@@ -454,13 +454,13 @@ var (
 	EditPackage = models.Request{
 		Method:  "PUT",
 		ReqBody: utils.PrepareReqBody(editPackage),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		Next:    &DeletePackage,
 	}
 
 	DeletePackage = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newPackage = models.PackageReq{
@@ -494,15 +494,15 @@ var (
 	packageResp models.PackageResp
 
 	Package_F1 = func() {
-		EditPackage.URL = config.ADM_FUN + "/package/edit/" + strconv.Itoa(packageResp.ID)
-		DeletePackage.URL = config.ADM_FUN + "/package/delete/" + strconv.Itoa(packageResp.ID)
+		EditPackage.URL = config.ADM_RU + "/package/edit/" + strconv.Itoa(packageResp.ID)
+		DeletePackage.URL = config.ADM_RU + "/package/delete/" + strconv.Itoa(packageResp.ID)
 	}
 
 	CreatePromotion = models.Request{
-		URL:      config.ADM_FUN + "/promotion/add",
+		URL:      config.ADM_RU + "/promotion/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(newPromotion),
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		RespData: &promotionResp,
 		Actions:  []func(){Promotion_F1},
 		Next:     &EditPromotion,
@@ -511,13 +511,13 @@ var (
 	EditPromotion = models.Request{
 		Method:  "PUT",
 		ReqBody: utils.PrepareReqBody(editPromotion),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		Next:    &DeletePromotion,
 	}
 
 	DeletePromotion = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newPromotion = models.PromotionReq{
@@ -549,15 +549,15 @@ var (
 	promotionResp models.PromotionResp
 
 	Promotion_F1 = func() {
-		EditPromotion.URL = config.ADM_FUN + "/promotion/edit/" + strconv.Itoa(promotionResp.ID)
-		DeletePromotion.URL = config.ADM_FUN + "/promotion/delete/" + strconv.Itoa(promotionResp.ID)
+		EditPromotion.URL = config.ADM_RU + "/promotion/edit/" + strconv.Itoa(promotionResp.ID)
+		DeletePromotion.URL = config.ADM_RU + "/promotion/delete/" + strconv.Itoa(promotionResp.ID)
 	}
 
 	CreateTag = models.Request{
-		URL:      config.ADM_FUN + "/tag/add",
+		URL:      config.ADM_RU + "/tag/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(newTag),
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		RespData: &tagResp,
 		Actions:  []func(){Tag_F1},
 		Next:     &EditTag,
@@ -566,13 +566,13 @@ var (
 	EditTag = models.Request{
 		Method:  "PUT",
 		ReqBody: utils.PrepareReqBody(editTag),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		Next:    &DeleteTag,
 	}
 
 	DeleteTag = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newTag = models.TagReq{
@@ -588,15 +588,15 @@ var (
 	tagResp models.TagResp
 
 	Tag_F1 = func() {
-		EditTag.URL = config.ADM_FUN + "/tag/edit/" + strconv.Itoa(tagResp.ID)
-		DeleteTag.URL = config.ADM_FUN + "/tag/delete/" + strconv.Itoa(tagResp.ID)
+		EditTag.URL = config.ADM_RU + "/tag/edit/" + strconv.Itoa(tagResp.ID)
+		DeleteTag.URL = config.ADM_RU + "/tag/delete/" + strconv.Itoa(tagResp.ID)
 	}
 
 	CreateWorkplace = models.Request{
-		URL:      config.ADM_FUN + "/workplace/add",
+		URL:      config.ADM_RU + "/workplace/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(newWorkplace), // Pushkin
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		RespData: &workplaceResp,
 		Actions:  []func(){WP_F1},
 		Next:     &EditWorkplace,
@@ -605,36 +605,36 @@ var (
 	EditWorkplace = models.Request{
 		Method:  "PUT",
 		ReqBody: utils.PrepareReqBody(editWorkplace), // Pushkin
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		Next:    &DeleteWorkplace,
 	}
 
 	DeleteWorkplace = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newWorkplace = models.WorkplaceReq{
 		Title: "AUTOTEST",
-		Club:  13,
+		Club:  21,
 	}
 
 	editWorkplace = models.WorkplaceReq{
 		Title: "EDITTED AUTOTEST",
-		Club:  13,
+		Club:  21,
 	}
 
 	workplaceResp models.WorkplaceResp
 
 	WP_F1 = func() {
-		EditWorkplace.URL = config.ADM_FUN + "/workplace/edit/" + strconv.Itoa(workplaceResp.ID)
-		DeleteWorkplace.URL = config.ADM_FUN + "/workplace/delete/" + strconv.Itoa(workplaceResp.ID)
+		EditWorkplace.URL = config.ADM_RU + "/workplace/edit/" + strconv.Itoa(workplaceResp.ID)
+		DeleteWorkplace.URL = config.ADM_RU + "/workplace/delete/" + strconv.Itoa(workplaceResp.ID)
 	}
 
 	CreateTerm = models.Request{
-		URL:      config.ADM_FUN + "/term/add",
+		URL:      config.ADM_RU + "/term/add",
 		Method:   "POST",
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		ReqBody:  utils.PrepareReqBody(newTerm),
 		RespData: &resp,
 		Actions:  []func(){Term_F1},
@@ -643,14 +643,14 @@ var (
 
 	EditTerm = models.Request{
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(editTerm),
 		Next:    &DeleteTerm,
 	}
 
 	DeleteTerm = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newTerm = models.TermReq{
@@ -664,31 +664,31 @@ var (
 	}
 
 	Term_F1 = func() {
-		EditTerm.URL = config.ADM_FUN + "/term/edit/" + strconv.Itoa(resp.ID)
-		DeleteTerm.URL = config.ADM_FUN + "/term/delete/" + strconv.Itoa(resp.ID)
+		EditTerm.URL = config.ADM_RU + "/term/edit/" + strconv.Itoa(resp.ID)
+		DeleteTerm.URL = config.ADM_RU + "/term/delete/" + strconv.Itoa(resp.ID)
 	}
 
-	ASD = models.Request{
-		URL:     config.ADM_FUN + "/access-system-device/add",
-		Method:  "POST",
-		Token:   &config.TokenAdmFun,
-		ReqBody: utils.PrepareReqBody(&newASD),
-	}
+	// ASD = models.Request{
+	// 	URL:     config.ADM_RU + "/access-system-device/add",
+	// 	Method:  "POST",
+	// 	Token:   &config.TokenAdmRu,
+	// 	ReqBody: utils.PrepareReqBody(&newASD),
+	// }
 
-	newASD = models.ASDReq{
-		SerialNumber:   "010101",
-		Type:           "AUTOTEST",
-		Code:           "1111",
-		OpenAfterTime:  1200,
-		OpenBeforeTime: 600,
-		Workplace:      3,
-	}
+	// newASD = models.ASDReq{
+	// 	SerialNumber:   "010101",
+	// 	Type:           "AUTOTEST",
+	// 	Code:           "1111",
+	// 	OpenAfterTime:  1200,
+	// 	OpenBeforeTime: 600,
+	// 	Workplace:      3,
+	// }
 
 	CreateUser = models.Request{
-		URL:      config.ADM_FUN + "/user/add",
+		URL:      config.ADM_RU + "/user/add",
 		Method:   "POST",
 		ReqBody:  utils.PrepareReqBody(newUser),
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		RespData: &userResp,
 		Actions:  []func(){User_F1},
 		Next:     &EditUser,
@@ -697,13 +697,13 @@ var (
 	EditUser = models.Request{
 		Method:  "PUT",
 		ReqBody: utils.PrepareReqBody(editUser),
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		Next:    &DeleteUser,
 	}
 
 	DeleteUser = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newUser = models.UserReq{
@@ -735,14 +735,14 @@ var (
 	userResp models.UserResp
 
 	User_F1 = func() {
-		EditUser.URL = config.ADM_FUN + "/user/edit/" + strconv.Itoa(userResp.ID)
-		DeleteUser.URL = config.ADM_FUN + "/user/delete/" + strconv.Itoa(userResp.ID)
+		EditUser.URL = config.ADM_RU + "/user/edit/" + strconv.Itoa(userResp.ID)
+		DeleteUser.URL = config.ADM_RU + "/user/delete/" + strconv.Itoa(userResp.ID)
 	}
 
 	CreateGroupTrain = models.Request{
-		URL:      config.ADM_FUN + "/group-training/add",
+		URL:      config.ADM_RU + "/group-training/add",
 		Method:   "POST",
-		Token:    &config.TokenAdmFun,
+		Token:    &config.TokenAdmRu,
 		ReqBody:  utils.PrepareReqBody(&newGroupTrain),
 		RespData: &resp,
 		Actions:  []func(){GroupTrain_F1},
@@ -751,14 +751,14 @@ var (
 
 	EditGroupTrain = models.Request{
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(&editGroupTrain),
 		Next:    &DeleteGroupTrain,
 	}
 
 	DeleteGroupTrain = models.Request{
 		Method: "DELETE",
-		Token:  &config.TokenAdmFun,
+		Token:  &config.TokenAdmRu,
 	}
 
 	newGroupTrain = models.GroupTrainReq{
@@ -778,56 +778,56 @@ var (
 	}
 
 	GroupTrain_F1 = func() {
-		EditGroupTrain.URL = config.ADM_FUN + "/group-training/edit/" + strconv.Itoa(resp.ID)
-		DeleteGroupTrain.URL = config.ADM_FUN + "/group-training/delete/" + strconv.Itoa(resp.ID)
+		EditGroupTrain.URL = config.ADM_RU + "/group-training/edit/" + strconv.Itoa(resp.ID)
+		DeleteGroupTrain.URL = config.ADM_RU + "/group-training/delete/" + strconv.Itoa(resp.ID)
 	}
 
 	BonusRefferal = models.Request{
-		URL:     config.ADM_FUN + "/setting/edit/3",
+		URL:     config.ADM_RU + "/setting/edit/3",
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(value1),
 	}
 
 	BonusMaxProcent = models.Request{
-		URL:     config.ADM_FUN + "/setting/edit/5",
+		URL:     config.ADM_RU + "/setting/edit/5",
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(value2),
 	}
 
 	BonusMinProcent = models.Request{
-		URL:     config.ADM_FUN + "/setting/edit/4",
+		URL:     config.ADM_RU + "/setting/edit/4",
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(value3),
 	}
 
 	BonusDayBeforeDel = models.Request{
-		URL:     config.ADM_FUN + "/setting/edit/7",
+		URL:     config.ADM_RU + "/setting/edit/7",
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(value4),
 	}
 
 	BonusDelProcent = models.Request{
-		URL:     config.ADM_FUN + "/setting/edit/6",
+		URL:     config.ADM_RU + "/setting/edit/6",
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(value5),
 	}
 
 	BonusAdd = models.Request{
-		URL:     config.ADM_FUN + "/setting/edit/1",
+		URL:     config.ADM_RU + "/setting/edit/1",
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(value6),
 	}
 
 	BonusRemove = models.Request{
-		URL:     config.ADM_FUN + "/setting/edit/2",
+		URL:     config.ADM_RU + "/setting/edit/2",
 		Method:  "PUT",
-		Token:   &config.TokenAdmFun,
+		Token:   &config.TokenAdmRu,
 		ReqBody: utils.PrepareReqBody(value7),
 	}
 
